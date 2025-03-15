@@ -46,4 +46,22 @@ function actualizarlista() {
     });
 }
 
+//funcion para sortear 
 
+function sortearAmigos() {
+    if (listaAmigos.length === 0) {
+        alert("Debes agregar al menos un nombre antes de sortear ");
+        return;
+    }
+    const indiceAleatorio = Math.floor(Math.random()* listaAmigos.length);
+    const amigoSorteado = listaAmigos[indiceAleatorio];
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = `<p>El amigo Secreto es: <strong>${amigoSorteado}<strong></p>`;
+
+    //boton reiniciar
+    const botonSortear = document.querySelector(.button-draw);
+    botonSortear.innerHTML = "<img src='assets/restart_icon.png' alt='Reiniciar'> Reiniciar";
+    botonSortear.setAttribute("onclick", "reiniciarJuego()");
+}
+
+//funcion de reiniciar 
