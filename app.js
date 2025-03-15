@@ -17,6 +17,33 @@ function agregarAmigos() {
         alert("Por favor, ingresa un numero valido.")
         return;
     }
+    if (!/^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/.test(nombre)) {
+        alert("El nombre no puede contener numeros ni caracteres especiales");
+        return;
+    }
+    if (listaAmigos.includes(nombre)) {
+        alert("Este nombre ya a sido agregado");
+        return;
+    }
 
+    //agregando nombres, actualizando y limpiando el campo de entrada
+
+    listaAmigos.push(nombre);
+    actualizarlista();//funcion 
+    input.value = "";
 
 }
+
+//funcion para la lista visual 
+
+function actualizarlista() {
+    const lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+    listaAmigos.forEach((amigo) => {
+        const li = document.createElement("li");
+        li.textContent = amigo;
+        lista.appendChild(li);
+    });
+}
+
+
