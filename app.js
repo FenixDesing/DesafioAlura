@@ -9,7 +9,7 @@ const maxParticipantes = 10;
 
 function agregarAmigos() {
     const input = document.getElementById("amigo");
-    const nombre = input.ariaValueMax.trim();
+    const nombre = input.value.trim();
 
     //validaciones 
 
@@ -36,7 +36,7 @@ function agregarAmigos() {
 
 //funcion para la lista visual 
 
-function actualizarlista() {
+function actualizarLista() {
     const lista = document.getElementById("listaAmigos");
     lista.innerHTML = "";
     listaAmigos.forEach((amigo) => {
@@ -53,7 +53,7 @@ function sortearAmigos() {
         alert("Debes agregar al menos un nombre antes de sortear ");
         return;
     }
-    const indiceAleatorio = Math.floor(Math.random()* listaAmigos.length);
+    const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
     const amigoSorteado = listaAmigos[indiceAleatorio];
     const resultado = document.getElementById("resultado");
     resultado.innerHTML = `<p>El amigo Secreto es: <strong>${amigoSorteado}<strong></p>`;
@@ -65,3 +65,7 @@ function sortearAmigos() {
 }
 
 //funcion de reiniciar 
+
+function reiniciarJuego() {
+    location.reload();
+}
