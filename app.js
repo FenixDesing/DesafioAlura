@@ -59,7 +59,7 @@ function sortearAmigos() {
     resultado.innerHTML = `<p>El amigo Secreto es: <strong>${amigoSorteado}<strong></p>`;
 
     //boton reiniciar
-    const botonSortear = document.querySelector(.button-draw);
+    const botonSortear = document.querySelector(".button-draw");
     botonSortear.innerHTML = "<img src='assets/restart_icon.png' alt='Reiniciar'> Reiniciar";
     botonSortear.setAttribute("onclick", "reiniciarJuego()");
 }
