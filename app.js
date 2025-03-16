@@ -7,14 +7,14 @@ const maxParticipantes = 10;
 
 // funcion para agregar amigos a la lista 
 
-function agregarAmigos() {
+function agregarAmigo() {
     const input = document.getElementById("amigo");
     const nombre = input.value.trim();
 
     //validaciones 
 
     if (nombre === "") {
-        alert("Por favor, ingresa un numero valido.")
+        alert("Por favor, ingresa un nombre valido.");
         return;
     }
     if (!/^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/.test(nombre)) {
@@ -25,11 +25,15 @@ function agregarAmigos() {
         alert("Este nombre ya a sido agregado");
         return;
     }
+    if (listaAmigos.length >= maxParticipantes) {
+        alert("Has alcanzado el limite de 10 participantes");
+        return;
+    }
 
     //agregando nombres, actualizando y limpiando el campo de entrada
 
     listaAmigos.push(nombre);
-    actualizarlista();//funcion 
+    actualizarLista();//funcion 
     input.value = "";
 
 }
@@ -55,6 +59,7 @@ function sortearAmigos() {
     }
     const indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
     const amigoSorteado = listaAmigos[indiceAleatorio];
+
     const resultado = document.getElementById("resultado");
     resultado.innerHTML = `<p>El amigo Secreto es: <strong>${amigoSorteado}<strong></p>`;
 
