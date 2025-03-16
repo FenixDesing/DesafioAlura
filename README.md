@@ -1,4 +1,4 @@
-##desafio de alura 
+## :hammer:desafio de alura 
 con funciones de:
 - agregar nombres
 - indica que no son validos numeros, caracteres especiales y valor en blanco
